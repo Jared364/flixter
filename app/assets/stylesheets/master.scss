@@ -3,6 +3,17 @@
 
 
 
+body {
+  background: image_url('bg.png');
+  font-family: 'Overpass', sans-serif;
+}
+
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .frosty {
   background: rgba(0, 0, 0, 0.5);
   color: white;
