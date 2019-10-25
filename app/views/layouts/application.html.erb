@@ -15,10 +15,12 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Flixter</a>
+        <a class="navbar-brand" href="/">Flixter</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item">
+              <%= link_to 'See All Courses', courses_path, class: 'nav-link' %>
+            </a>
             <% if user_signed_in? %>
               <a class="nav-item">
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -31,8 +33,6 @@
                 <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
               </a>
             <% end %>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
           </div>
         </div>
       </nav>
@@ -52,7 +52,7 @@
       <div class="container">
         <b>Footer Here</b>
         <br/>
-        <%= link_to 'Link', '#' %>
+        <%= link_to 'Teach a Course', new_instructor_course_path %>
       </div>
     </div>
   
