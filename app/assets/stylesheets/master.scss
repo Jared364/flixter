@@ -75,6 +75,22 @@ body {
   margin-right: auto;
 }
 
+.lesson {
+  background-color: black;
+  margin-top: 10px;
+  height: 130px;
+}
+
+.lesson a {
+  color: white;
+  font-size: 15px;
+}
+
+.lesson a b {
+  font-weight: 100;
+  font-size: 25px;
+}
+
 .navbar {
   font-family: 'Overpass', sans-serif;
   font-weight: 300;
@@ -88,4 +104,10 @@ body {
   font-family: 'Overpass', sans-serif;
   font-weight: 700;
   font-size: 30px;
+}
+
+.section {
+  border: 1px solid;
+  box-shadow: 1px 3px 5px black;
+  padding: 20px;
 }
