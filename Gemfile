@@ -71,6 +71,7 @@ gem 'carrierwave', '~> 2.0'
 gem 'figaro'
 gem 'fog-aws'
 gem 'carrierwave-aws'
+gem 'stripe'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
