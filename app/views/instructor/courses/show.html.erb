@@ -17,9 +17,9 @@
       <li>
         <%= section.title %>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
-        <ul>
+        <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
-            <li>
+            <li data-item-id=<%= lesson.id %>>
               <b><%= lesson.title %></b>
               -
               <%= lesson.subtitle %>
@@ -30,4 +30,13 @@
       </li>
     <% end %>
   </ul>
+  <script>
+    $(function() {
+      $('.lessons').sortable({
+        update: function( event, ui ) {
+          alert("LessonId: " + ui.item.data('item-id') + "Index: " + ui.item.index());
+        }
+      });
+    });
+  </script>
 </div>
