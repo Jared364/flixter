@@ -1,4 +1,25 @@
+<!-- JavaScript //-->
+
+<script>
+  $(function() {
+    $('.lessons').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { lesson: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+  });
+</script>
+
+<!-- Visual-Interactive //-->
+
 <br/>
+
+<!-- Box and Contents //-->
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
   <%= image_tag current_course.image.url, class: 'img-fluid' %>
@@ -7,10 +28,11 @@
   <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
   <br class="clr" />
   <br/>
-
   <div class="text-center">
     <%= link_to "Add a new section...", new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
   </div>
+
+  <!-- Index listing of sections / lessons //-->
 
   <ul>
     <% current_course.sections.each do |section| %>
@@ -19,7 +41,7 @@
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
-            <li data-item-id=<%= lesson.id %>>
+            <li data-update-url="<%= instructor_lesson_path lesson %>">
               <b><%= lesson.title %></b>
               -
               <%= lesson.subtitle %>
@@ -30,13 +52,4 @@
       </li>
     <% end %>
   </ul>
-  <script>
-    $(function() {
-      $('.lessons').sortable({
-        update: function( event, ui ) {
-          alert("LessonId: " + ui.item.data('item-id') + "Index: " + ui.item.index());
-        }
-      });
-    });
-  </script>
 </div>
