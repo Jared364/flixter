@@ -63,8 +63,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails'
-gem 'popper_js', '>= 1.14.3'
-gem "bootstrap", ">= 4.3.1"
+gem 'jquery-ui-rails'
+gem 'popper_js', '~> 1.11.1'
+gem 'bootstrap', '4.0.0.alpha6'
 gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', '~> 2.0'
