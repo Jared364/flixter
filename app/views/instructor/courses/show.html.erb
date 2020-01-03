@@ -128,7 +128,7 @@
         </button>
         <h4 class="modal-title" id="newLessonModalLabel">Add a new lesson</h4>
       </div>
-      <%= simple_form_for @lesson, url: instructor_lesson_path, html: {id: 'newLessonForm' } do |f| %>
+      <%= simple_form_for @lesson, url: "#", html: {id: 'newLessonForm' } do |f| %>
         <div class="modal-body">
           <%= f.input :title %>
           <%= f.input :subtitle %>
